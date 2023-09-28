@@ -16,10 +16,11 @@ class _BaseHandler(ABC):
         self._rmr_xapp = rmr_xapp
         self.logger = self._rmr_xapp.logger
         self.msgtype = msgtype
+        # This method will be executed when an obj of this class is created together with initisation of the attritubes above
         self._rmr_xapp.register_callback(self.request_handler, msgtype) # registers callback for a particular msg_type. I should not worry about summary and sbuf that request_handler method takes, its register_callback func that pass both varaibles to it and I can get both and use them within the request_handler method
         
     @abstractmethod
-    def request_handler(self, rmr_xapp, summary, sbuf): # summary contains the PAYLOAD i.e {"policy_type_id":"2"} and maybe othet stuff. Its a dictionary type
+    def request_handler(self, summary, sbuf): # summary contains the PAYLOAD i.e {"policy_type_id":"2"} and maybe othet stuff. Its a dictionary type
         pass
     
         

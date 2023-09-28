@@ -1,3 +1,8 @@
-policy_query = '{"policy_type_id":"' + str(2) + '"}'
-print(policy_query.encode())
-        
+from testxapp import TestXapp
+
+def lauchXapp():
+    testxapp = TestXapp()
+    testxapp.start()
+    
+if __name__ == "__main__":
+    lauchXapp()
