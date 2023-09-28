@@ -38,6 +38,7 @@ class TestXapp:
         """
         Function that processes messages for which no handler is defined. This is the default handler
         """
+        
         self._rmr_xapp.logger.info("Testxapp.A1PolicyHandler.default_handler called for msg type = " + str(summary[rmr.RMR_MS_MSG_TYPE]))
         self._rmr_xapp.logger.info("Textxapp.A1PolicyHandler.default_handler called and says:: Received summary is {}".format(summary))
         self._rmr_xapp.rmr_free(sbuf)
