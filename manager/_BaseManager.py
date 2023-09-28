@@ -9,6 +9,8 @@ class _BaseManager(ABC):
     Parameters:
         rmr_xapp: Reference to original RMRxappframe object
     """
+    
+    
     def __init__(self, rmr_xapp: RMRXapp):  # Constructor
         self._rmr_xapp = rmr_xapp
         self.logger = self._rmr_xapp.logger

@@ -31,7 +31,6 @@ class TestXapp:
         """
         Function that runs at start and on every configuration file change.
         """
-        
         pass
     
     

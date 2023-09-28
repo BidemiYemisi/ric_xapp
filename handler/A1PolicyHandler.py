@@ -38,6 +38,7 @@ class A1PolicyHandler(_BaseHandler):
         self._rmr_xapp.rmr_send(json.dumps(response).encode(), Constants.A1_POLICY_RESP_MSG_TYPE)
         self.logger.info("Testxapp.A1PolicyHandler.request_handler method says:: Response for received request sent. Response is {}".format(response))
 
+
     # check if one of the keys are in the request dict
     def verifyPolicy(self, request: dict):
         for i in ["policy_type_id", "operation", "policy_instance_id"]:
