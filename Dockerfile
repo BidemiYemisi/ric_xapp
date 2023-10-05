@@ -36,11 +36,11 @@ RUN pip install /tmp
 
 # Env - TODO- Configmap
 ENV PYTHONUNBUFFERED 1
-ENV CONFIG_FILE=/tmp/init/config-file.json
+ENV CONFIG_FILE=/tmp/init/config.json
 
 # For Default DB connection, modify for resp kubernetes env
-ENV DBAAS_SERVICE_PORT=6379
-ENV DBAAS_SERVICE_HOST=service-ricplt-dbaas-tcp.ricplt.svc.cluster.local
+# ENV DBAAS_SERVICE_PORT=6379
+# ENV DBAAS_SERVICE_HOST=service-ricplt-dbaas-tcp.ricplt.svc.cluster.local
 
 #Run
-CMD run-hw-python.py
+CMD run-testxapp.py

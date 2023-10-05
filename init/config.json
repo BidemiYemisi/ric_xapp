@@ -3,11 +3,11 @@
     "version": "1.0.0",
     "containers": [
         {
-            "name": "testxapp-python",
+            "name": "testxapp",
             "image": {
                 "registry": "nexus3.o-ran-sc.org:10004",
                 "name": "o-ran-sc/ric-app-testxapp-python",
-                "tag": "1.1.0"
+                "tag": "1.0.0"
             }
         }
     ],
@@ -15,28 +15,28 @@
         "ports": [
             {
                 "name": "http",
-                "container": "testxapp-python",
+                "container": "testxapp",
                 "port": 8080,
                 "description": "http service"
             },
             {
                 "name": "rmrroute",
-                "container": "testxapp-python",
+                "container": "testxapp",
                 "port": 4561,
-                "description": "rmr route port for testxapp-python xapp"
+                "description": "rmr route port for testxapp xapp"
             },
             {
                 "name": "rmrdata",
-                "container": "testxapp-python",
+                "container": "testxapp",
                 "port": 4560,
-                "rxMessages": ["RIC_SUB_RESP", "RIC_SUB_FAILURE", "RIC_SUB_DEL_RESP", "RIC_INDICATION"],
-                "txMessages": ["RIC_SUB_REQ", "RIC_SUB_DEL_REQ", "RIC_SGNB_ADDITION_REQ", "RIC_SGNB_ADDITION_ACK"],
+                "rxMessages": ["A1_POLICY_REQ_MSG_TYPE"],
+                "txMessages": ["A1_POLICY_RESP_MSG_TYPE", "A1_POLICY_QUERY_MSG_TYPE"],
                 "mtypes" : [
                         {"name":"TESTNAME1","id":55555},
                         {"name":"TESTNAME2","id":55556}
                 ],
                 "policies": [1],
-                "description": "rmr data port for testxapp-python"
+                "description": "rmr data port for testxap"
             }
         ]
     },
@@ -45,11 +45,10 @@
         "maxSize": 2072,
         "numWorkers": 1,
         "txMessages": [
-            "RIC_SUB_REQ", "A1_POLICY_RESP", "A1_POLICY_QUERY", "RIC_HEALTH_CHECK_RESP"
+            "A1_POLICY_RESP_MSG_TYPE", "A1_POLICY_QUERY_MSG_TYPE"
         ],
         "rxMessages": [
-            "RIC_SUB_RESP",
-            "A1_POLICY_REQ", "RIC_HEALTH_CHECK_REQ"
+            "A1_POLICY_REQ_MSG_TYPE"
         ],
     "policies": [1]
     },
