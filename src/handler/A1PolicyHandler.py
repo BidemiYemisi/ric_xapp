@@ -1,7 +1,7 @@
 import json
 from ricxappframe.xapp_frame import RMRXapp, rmr
-from ..utils.constants import Constants
-from ._BaseHandler import _BaseHandler
+from src.utils.constants import Constants
+from src.handler._BaseHandler import _BaseHandler
 
 
 class A1PolicyHandler(_BaseHandler):
