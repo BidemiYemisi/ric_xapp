@@ -26,7 +26,6 @@ class TestXapp:
         # Create an instance of A1PolicyManager and send A1 policy query
         a1_mgr = A1PolicyManager(self._rmr_xapp)
         a1_mgr.startup()
-        # a1 = A1PolicyHandler(self._rmr_xapp, Constants.A1_POLICY_QUERY_MSG_TYPE)
         
         
     def _handle_config_change(self):

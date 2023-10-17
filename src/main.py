@@ -1,4 +1,4 @@
-from testxapp import TestXapp
+from src.testxapp import TestXapp
 
 def lauchXapp():
     testxapp = TestXapp()
