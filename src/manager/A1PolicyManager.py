@@ -1,7 +1,8 @@
 import json
 from ricxappframe.xapp_frame import RMRXapp, rmr
-from src.utils.constants import Constants
-from src.manager._BaseManager import _BaseManager
+from ..utils.constants import Constants
+from ._BaseManager import _BaseManager
+
 
 class A1PolicyManager(_BaseManager):
     def __init__(self, rmr_xapp: RMRXapp):
