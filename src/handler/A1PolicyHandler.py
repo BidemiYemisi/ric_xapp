@@ -41,7 +41,7 @@ class A1PolicyHandler(_BaseHandler):
         response = self.buildPolicyResp(request)
 
         # Send response with new message type
-        self._rmr_xapp.rmr_send(json.dumps(response).encode(), Constants.A1_POLICY_RESP_MSG_TYPE)
+        self._rmr_xapp.rmr_send(json.dumps(response).encode(), Constants.A1_POLICY_RESP)
         self.logger.info("Testxapp.A1PolicyHandler.request_handler method says:: Response for received request sent. Response is {}".format(response))
 
 

@@ -31,7 +31,7 @@
                 "port": 4560,
                 "rxMessages": ["A1_POLICY_REQ_MSG_TYPE"],
                 "txMessages": ["A1_POLICY_RESP_MSG_TYPE", "A1_POLICY_QUERY_MSG_TYPE"],
-                "policies": [1],
+                "policies": [20002],
                 "description": "rmr data port for testxap"
             }
         ]
@@ -46,6 +46,6 @@
         "rxMessages": [
             "A1_POLICY_REQ_MSG_TYPE"
         ],
-    "policies": [1]
+    "policies": [20002]
     }
 }
