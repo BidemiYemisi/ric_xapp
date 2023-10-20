@@ -17,14 +17,14 @@ class TestXapp:
                                  use_fake_sdl = bool(self.fake_sdl))
         
         
-    def _post_init(self):
+    def _post_init(self, rmr_xapp):
         
         """
         Function that runs when xapp initialization is complete
         """
         
         # Create an instance of A1PolicyManager and send A1 policy query
-        a1_mgr = A1PolicyManager(self._rmr_xapp)
+        a1_mgr = A1PolicyManager(rmr_xapp)
         a1_mgr.startup()
         
         
