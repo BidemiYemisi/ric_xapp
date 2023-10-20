@@ -50,7 +50,7 @@ class TestXapp:
         Function that creates all the handlers for RMR Messages
         """
         # Creates instances of classes with callback functions that respond to a specific msg type. 
-        A1PolicyHandler(self._rmr_xapp, Constants.A1_POLICY_REQ) # NEED TO CHECK THIS OUT
+        A1PolicyHandler(self._rmr_xapp, Constants.A1_POLICY_REQ) # NEED TO CHECK THIS OUT: if A1_POLICY_REQ equals A1_POLICY_QUERY, then the handler for that query will be called else the default handler will be called
        
         
     def start(self, thread = False):
