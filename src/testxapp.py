@@ -28,21 +28,21 @@ class TestXapp:
         a1_mgr.startup()
         
         
-    def _handle_config_change(self):
+    def _handle_config_change(self, rmr_xapp, config):
         """
         Function that runs at start and on every configuration file change.
         """
         pass
     
     
-    def _default_handler(self, summary, sbuf):
+    def _default_handler(self, rmr_xapp, summary, sbuf):
         """
         Function that processes messages for which no handler is defined. This is the default handler
         """
         
-        self._rmr_xapp.logger.info("Testxapp.A1PolicyHandler.default_handler called for msg type = " + str(summary[rmr.RMR_MS_MSG_TYPE]))
-        self._rmr_xapp.logger.info("Textxapp.A1PolicyHandler.default_handler called and says:: Received summary is {}".format(summary))
-        self._rmr_xapp.rmr_free(sbuf)
+        rmr_xapp.logger.info("Testxapp.A1PolicyHandler.default_handler called for msg type = " + str(summary[rmr.RMR_MS_MSG_TYPE]))
+        rmr_xapp.logger.info("Textxapp.A1PolicyHandler.default_handler called and says:: Received summary is {}".format(summary))
+        rmr_xapp.rmr_free(sbuf)
         
     
     def createHandlers(self):
