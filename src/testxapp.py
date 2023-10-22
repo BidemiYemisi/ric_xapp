@@ -17,38 +17,39 @@ class TestXapp:
                                  use_fake_sdl = bool(self.fake_sdl))
         
         
-    def _post_init(self, rmr_xapp):
+    def _post_init(self):
         
         """
         Function that runs when xapp initialization is complete
         """
-        
+        Logger.debug("_post_init called")
         # Create an instance of A1PolicyManager and send A1 policy query
-        a1_mgr = A1PolicyManager(rmr_xapp)
-        a1_mgr.startup()
+
         
         
-    def _handle_config_change(self, rmr_xapp, config):
+    def _handle_config_change(self, config):
         """
         Function that runs at start and on every configuration file change.
         """
         pass
     
     
-    def _default_handler(self, rmr_xapp, summary, sbuf):
+    def _default_handler(self, summary, sbuf):
         """
         Function that processes messages for which no handler is defined. This is the default handler
         """
         
-        rmr_xapp.logger.info("Testxapp.A1PolicyHandler.default_handler called for msg type = " + str(summary[rmr.RMR_MS_MSG_TYPE]))
-        rmr_xapp.logger.info("Textxapp.A1PolicyHandler.default_handler called and says:: Received summary is {}".format(summary))
-        rmr_xapp.rmr_free(sbuf)
+        self.logger.info("Testxapp.A1PolicyHandler.default_handler called for msg type = " + str(summary[rmr.RMR_MS_MSG_TYPE]))
+        self.logger.info("Textxapp.A1PolicyHandler.default_handler called and says:: Received summary is {}".format(summary))
+        self.rmr_free(sbuf)
         
     
     def createHandlers(self):
         """
         Function that creates all the handlers for RMR Messages
         """
+        a1_mgr = A1PolicyManager(self._rmr_xapp)
+        a1_mgr.startup()
         # Creates instances of classes with callback functions that respond to a specific msg type. 
         A1PolicyHandler(self._rmr_xapp, Constants.A1_POLICY_REQ) # NEED TO CHECK THIS OUT: if A1_POLICY_REQ equals A1_POLICY_QUERY, then the handler for that query will be called else the default handler will be called
        
