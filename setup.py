@@ -33,6 +33,6 @@ setup(
     python_requires='>=3.8',
     long_description=read('README.md'),
     install_requires=["ricxappframe>=1.1.1,<2.3.0"],
-    entry_points={"console_scripts": ["run-testxapp.py=src.main:launchXapp"]},  # adds a magical entrypoint for Docker
+    entry_points={"console_scripts": ["run-testxapp.py=src.main:start"]},  # adds a magical entrypoint for Docker
     data_files=[("", ["LICENSE.txt"])],
 )
