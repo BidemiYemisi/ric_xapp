@@ -29,8 +29,8 @@
                 "name": "rmrdata",
                 "container": "testxapp",
                 "port": 4560,
-                "rxMessages": ["A1_POLICY_REQ_MSG_TYPE"],
-                "txMessages": ["A1_POLICY_RESP_MSG_TYPE", "A1_POLICY_QUERY_MSG_TYPE"],
+                "rxMessages": ["A1_POLICY_REQ"],
+                "txMessages": ["A1_POLICY_RESP", "A1_POLICY_QUERY"],
                 "policies": [20002],
                 "description": "rmr data port for testxap"
             }
@@ -41,10 +41,10 @@
         "maxSize": 2072,
         "numWorkers": 1,
         "txMessages": [
-            "A1_POLICY_RESP_MSG_TYPE", "A1_POLICY_QUERY_MSG_TYPE"
+            "A1_POLICY_RESP", "A1_POLICY_QUERY"
         ],
         "rxMessages": [
-            "A1_POLICY_REQ_MSG_TYPE"
+            "A1_POLICY_REQ"
         ],
     "policies": [20002]
     }
